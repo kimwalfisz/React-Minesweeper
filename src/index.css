@@ -1,0 +1,65 @@
+body {
+    background-image: url(./utils/game-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.easy {
+    width: 58px;
+    height: 58px;
+    font-size: 1.75rem;
+}
+.medium {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+}
+.hard {
+    width: 23px;
+    height: 23px;
+    font-size: 1rem;
+}
+.light {
+    background-color: #aad751;
+}
+.dark {
+    background-color: #a2d149;
+}
+.light.revealed {
+    background-color: #d4b597;
+}
+.dark.revealed {
+    background-color: #e3c19e;
+}
+
+._1 {
+    color: blue;
+}
+._2 {
+    color: green;
+}
+._3 {
+    color: red;
+}
+._4 {
+    color: purple;
+}
+
+
