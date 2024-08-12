@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container">
       <h1>Minesweeper</h1>
       <Difficulty onChangeDiff={handleChangeDiff} />
       <GameBoard

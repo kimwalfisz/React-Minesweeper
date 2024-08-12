@@ -20,7 +20,8 @@ export default function GameBoard({ onGameover, diff }) {
   useEffect(() => {
     if (
       nonMinesCount ===
-      gridData.board.length * gridData.board[0].length - gridData.minesLocations.length
+      gridData.board.length * gridData.board[0].length -
+        gridData.minesLocations.length
     )
       setGameover({ isOver: true, result: "won" });
   }, [nonMinesCount]);
@@ -34,7 +35,7 @@ export default function GameBoard({ onGameover, diff }) {
         for (const [bombXCord, bombYCord] of prevData.minesLocations) {
           updatedBoard[bombXCord][bombYCord].revealed = true;
         }
-        return {...prevData, board:updatedBoard};
+        return { ...prevData, board: updatedBoard };
       });
       setGameover({ isOver: true, result: "lost" });
     } else {
@@ -45,7 +46,7 @@ export default function GameBoard({ onGameover, diff }) {
           cellData.x,
           cellData.y
         );
-        return {...prevData, board:updatedBoard};
+        return { ...prevData, board: updatedBoard };
       });
       setNonMinesCouns((prevCount) => prevCount + revealedCellsCount.current);
     }
@@ -59,7 +60,7 @@ export default function GameBoard({ onGameover, diff }) {
       let updatedBoard = JSON.parse(JSON.stringify(prevData.board));
       updatedBoard[cellData.x][cellData.y].flagged =
         !prevData.board[cellData.x][cellData.y].flagged;
-      return {...prevData, board: updatedBoard};
+      return { ...prevData, board: updatedBoard };
     });
   }
 
@@ -73,7 +74,7 @@ export default function GameBoard({ onGameover, diff }) {
       />
       <div className="board">
         {gridData.board.map((row, rowIdx) => (
-          <div key={rowIdx}>
+          <div class="row" key={rowIdx}>
             {row.map((cell, idx) => (
               <Cell
                 key={idx}
