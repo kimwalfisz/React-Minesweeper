@@ -19,7 +19,7 @@ export default function Cell({ cellData, onClickCell, onRightClickCell, diff }) 
       cssClasses += ` _${cellData.value}`
     }
   }
-  if (cellData.flagged) cellValue = "📍";
+  if (cellData.flagged) cellValue = '📍';
   
   return (
     <div
