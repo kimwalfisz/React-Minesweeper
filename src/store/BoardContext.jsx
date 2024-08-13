@@ -79,6 +79,7 @@ export default function BoardContextProvider({ children }) {
 
   function handleRightClickCell(e, cellData) {
     e.preventDefault();
+    if (cellData.revealed) return;
     setFlagsCount(prevCount => {
       return prevCount + (cellData.flagged ? 1 : -1);
     });
